@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "d5b8",
+      "department": "IT",
+      "name": "Talha Amjad",
+      "mobile": "03207419251",
+      "email": "i.talha.amjad@gmail.com",
+      "gender": "",
+      "doj": "",
+      "city": "Lahore",
+      "salary": 0,
+      "address": "Maka Colony Gulberg(iii) Lahore Pakistan, Punjab",
+      "status": true
+    }
+  ]
+}
