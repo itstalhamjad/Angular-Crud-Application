@@ -3,15 +3,20 @@ import { UserModel } from '../../Model/user';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../../Service/user.service';
+import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule,NgxPaginationModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
 export class UserComponent implements OnInit {
+
+    p: any;
+
   userList: UserModel[] = [];
   editMode: boolean = false;
   user: UserModel = {
@@ -83,6 +88,20 @@ export class UserComponent implements OnInit {
     form.reset();
     this.editMode = false;
     this.getUserList();
-  }
+  }  
+
+
+
+   // Pagination 
+   data: any = [];
+   getData() {
+     this._userService.getUsers().subscribe(
+       (data) => {
+         this.data = data;
+         console.log(this.data);
+       }
+     );
+   }
+ 
 }
 
